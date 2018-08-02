@@ -23,10 +23,11 @@
   },
   "devDependencies": {
     "nwb": "0.21.x",
+    "nwb-sass": "^0.8.4",
     "react": "^16.4.2",
     "react-dom": "^16.4.2"
   },
-  "author": "",
+  "author": "Kmoonpei",
   "homepage": "",
   "license": "MIT",
   "repository": "",
