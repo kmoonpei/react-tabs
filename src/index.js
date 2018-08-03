@@ -1,51 +1,45 @@
 import React, { Component } from 'react'
+import './style.scss'
 
+let defaultContanierStyle = {
+  width: 200
+}
+let defaultCurrentBgColor = 'rgba(56, 165, 197,.5)'
 export default class extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      current_position: this.props.current_position ? this.props.current_position : 0
+      current_position: this.props.current_position && this.props.current_position < this.props.titles.length ? this.props.current_position : 0
     }
-    this.tabs = ['tit0', 'tit1', 'tit2']
+    this.tabs = this.props.titles
+    this.contanierStyle = this.props.contanierStyle ? this.props.contanierStyle : defaultContanierStyle
+    this.currentBgColor = this.props.currentBgColor ? this.props.currentBgColor : defaultCurrentBgColor
   }
   componentDidMount() {
-    this
+
+  }
+  changeTab(i) {
+    this.setState({ current_position: i })
   }
   render() {
+    let { current_position } = this.state
     return (
-      <div style={this.styles.contanier}>
-        <ul style={this.styles.tab_ul}>
-          {this.tabs.map((item) => {
-            return <li style={this.styles.tab_li}>{item}</li>
+      <div className="contanier" style={this.contanierStyle}>
+        <ul className="tab_ul">
+          {this.tabs.map((item, i) => {
+            return <li
+              key={i}
+              className={current_position == i ? "tab_li current" : 'tab_li'}
+              style={{ backgroundColor: current_position == i ? this.currentBgColor : 'rgba(238,238,238,.5)' }}
+              onClick={() => { this.changeTab(i) }}>
+              {item}
+            </li>
           })}
         </ul>
-        <div style={this.styles.content}></div>
+        <div className="content"></div>
       </div>
     )
   }
 
-  styles = {
-    contanier: {
-      width: 200,
-    },
-    tab_ul: {
-      display: 'flex',
-      backgroundColor: 'rgba(238,238,238,.5)',
-      listStyle: 'none',
-      padding: 0,
-      margin: 0,
-    },
-    tab_li: {
-      float: 'left',
-      flex: 1,
-      borderWidth: 1,
-      borderColor: '#eee',
-      textAlign: 'center',
 
-    },
-    content: {
-      height: 200,
-      backgroundColor: '#eee',
-    },
-  }
 }
