@@ -1,3 +1,8 @@
+* {
+    padding: 0; 
+    margin: 0;
+    box-sizing: border-box; 
+}
 .contanier { 
     width: 200px; 
     font-size: 13px;
@@ -6,8 +11,6 @@
         height: 30px;
         background-color: rgba(238,238,238,.5); 
         list-style: none; 
-        padding: 0; 
-        margin: 0; 
         border-bottom-color: #999;
         border-bottom-width: 2px;
         .tab_li {   
@@ -27,5 +30,13 @@
     .content {      
         height: 200px;
         background-color: #eee;
+        overflow-y: auto; 
+        .content_ul {
+            padding: 10px;
+            .item_li {
+                height: 40px;
+                line-height: 40px;
+            }
+        }
     }
 }
