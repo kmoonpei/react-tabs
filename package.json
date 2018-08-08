@@ -1,5 +1,5 @@
 {
-  "name": "react-tabs",
+  "name": "@kmoonpei/react-tabs",
   "version": "1.0.0",
   "description": "react-tabs React component",
   "main": "lib/index.js",
