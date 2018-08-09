@@ -2,7 +2,7 @@
   "name": "@kmoonpei/react-tabs",
   "version": "1.0.5",
   "description": "react-tabs React component",
-  "main": "src",
+  "main": "src/",
   "files": [
     "css",
     "es",
