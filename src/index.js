@@ -49,3 +49,48 @@ export default class extends Component {
 
 
 }
+
+let styles = {
+  base_type: {
+    padding: 0,
+    margin: 0,
+    boxSizing: 'border-box',
+  },
+  contanier: {
+    width: 200,
+    fontSize: 13,
+  },
+  tab_ul: {
+    display: 'flex',
+    height: 30,
+    backgroundColor: 'rgba(238, 238, 238, .5)',
+    listStyle: 'none',
+    borderBottomColor: '#999',
+    BorderBottomWidth: 2,
+  },
+  tab_li: {
+    flex: 1,
+    height: 30,
+    lineHeight: 30,
+    textAlign: 'center',
+  },
+  current: {
+    color: '#fff',
+    fontSize: 14,
+  },
+  hover: {
+    borderColor: 'rgba(56, 165, 197, .5)',
+  },
+  content: {
+    height: 200,
+    backgroundColor: '#eee',
+    overFlowY: 'auto',
+  },
+  content_ul: {
+    padding: 10,
+  },
+  item_li: {
+    height: 40,
+    lineHeight: 40,
+  },
+}
